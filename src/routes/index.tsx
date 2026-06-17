@@ -6,6 +6,7 @@ import { UpcomingPanel } from "@/components/UpcomingPanel";
 import { TaskDialog } from "@/components/TaskDialog";
 import { useStore, type Task } from "@/lib/storage";
 import { useT } from "@/lib/i18n";
+import { Plus, ListChecks, Compass } from "lucide-react";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -68,7 +69,8 @@ function Dashboard() {
       <main className="flex-1 flex flex-col min-w-0">
         <header className="h-20 border-b border-border flex items-center justify-between px-10 bg-background/80 backdrop-blur-sm sticky top-0 z-10">
           <div className="flex flex-col">
-            <span className="text-[10px] font-mono text-muted uppercase leading-none mb-1">
+            <span className="text-[10px] font-mono text-muted uppercase leading-none mb-1 flex items-center gap-1.5">
+              <Compass className="size-3" />
               {t("context")} <span className="italic text-[9px]">/ Context</span>
             </span>
             <h2 className="text-lg font-semibold tracking-tight">
@@ -78,8 +80,8 @@ function Dashboard() {
               )}
             </h2>
           </div>
-          <div className="h-10 px-4 ring-1 ring-border rounded-sm flex items-center bg-white shadow-sm">
-            <span className="text-muted mr-3">+</span>
+          <div className="h-10 px-4 ring-1 ring-border rounded-sm flex items-center bg-white shadow-sm focus-within:ring-primary/60 transition">
+            <Plus className="size-3.5 text-muted mr-2.5" />
             <input
               type="text"
               value={quickAdd}
@@ -95,7 +97,8 @@ function Dashboard() {
           <div className="flex-1 min-w-0 space-y-12">
             <section>
               <h3 className="text-[11px] font-mono uppercase tracking-[0.2em] text-muted mb-6 flex items-center gap-4">
-                <span>
+                <span className="inline-flex items-center gap-2">
+                  <ListChecks className="size-3" />
                   {t("activeTasks")}{" "}
                   <span className="font-normal opacity-50">/ {t("activeTasksAlt")}</span>
                 </span>
