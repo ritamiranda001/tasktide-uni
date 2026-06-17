@@ -1,6 +1,7 @@
 import { useT } from "@/lib/i18n";
 import type { Task } from "@/lib/storage";
 import { format, isToday, isTomorrow } from "date-fns";
+import { CalendarClock, Sparkles } from "lucide-react";
 
 type Props = {
   tasks: Task[];
@@ -15,12 +16,16 @@ export function UpcomingPanel({ tasks }: Props) {
 
   return (
     <section>
-      <h3 className="text-[11px] font-mono uppercase tracking-[0.2em] text-muted mb-6">
+      <h3 className="text-[11px] font-mono uppercase tracking-[0.2em] text-muted mb-6 flex items-center gap-2">
+        <CalendarClock className="size-3" />
         {t("upcoming")}{" "}
         <span className="font-normal opacity-50">/ {t("upcomingAlt")}</span>
       </h3>
       {upcoming.length === 0 ? (
-        <p className="text-xs text-muted italic">{t("noUpcoming")}</p>
+        <p className="text-xs text-muted italic inline-flex items-center gap-2">
+          <Sparkles className="size-3" />
+          {t("noUpcoming")}
+        </p>
       ) : (
         <div className="space-y-4">
           {upcoming.map((task) => {

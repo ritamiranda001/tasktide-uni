@@ -1,7 +1,7 @@
 import { useT } from "@/lib/i18n";
 import type { Course } from "@/lib/storage";
 import { cn } from "@/lib/utils";
-import { Plus, Trash2 } from "lucide-react";
+import { Plus, Trash2, GraduationCap, BookMarked, Languages } from "lucide-react";
 import { useState } from "react";
 import {
   Dialog,
@@ -37,8 +37,13 @@ export function CourseSidebar({ courses, selectedId, onSelect, onAdd, onDelete }
   return (
     <aside className="w-72 border-r border-border flex flex-col p-6 sticky top-0 h-screen shrink-0">
       <div className="mb-10">
-        <h1 className="text-xs font-bold tracking-widest uppercase mb-1">{t("appName")}</h1>
-        <p className="text-[10px] font-mono text-muted uppercase tracking-tighter italic">
+        <div className="flex items-center gap-2 mb-1.5">
+          <div className="size-7 rounded-sm bg-foreground text-background flex items-center justify-center">
+            <GraduationCap className="size-4" strokeWidth={2.2} />
+          </div>
+          <h1 className="text-xs font-bold tracking-widest uppercase">{t("appName")}</h1>
+        </div>
+        <p className="text-[10px] font-mono text-muted uppercase tracking-tighter italic pl-9">
           {t("semester")}
         </p>
       </div>
@@ -46,7 +51,8 @@ export function CourseSidebar({ courses, selectedId, onSelect, onAdd, onDelete }
       <nav className="flex-1 space-y-8 overflow-y-auto">
         <section>
           <header className="flex justify-between items-end mb-4 border-b border-border pb-1">
-            <span className="text-[10px] font-bold uppercase tracking-widest">
+            <span className="text-[10px] font-bold uppercase tracking-widest flex items-center gap-1.5">
+              <BookMarked className="size-3" />
               {t("courses")}{" "}
               <span className="text-muted/60 font-normal italic">/ {t("coursesAlt")}</span>
             </span>
@@ -131,6 +137,7 @@ export function CourseSidebar({ courses, selectedId, onSelect, onAdd, onDelete }
           onClick={() => setLang(lang === "pt" ? "en" : "pt")}
           className="text-[10px] font-mono uppercase tracking-widest flex items-center gap-2 px-2 py-1 ring-1 ring-border rounded hover:bg-black/5"
         >
+          <Languages className="size-3" />
           <span className={cn(lang === "pt" ? "text-foreground" : "text-muted")}>PT</span>
           <span className="w-px h-2 bg-border" />
           <span className={cn(lang === "en" ? "text-foreground" : "text-muted")}>EN</span>

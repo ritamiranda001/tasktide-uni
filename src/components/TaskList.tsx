@@ -2,7 +2,7 @@ import { useT } from "@/lib/i18n";
 import type { Course, Priority, Task } from "@/lib/storage";
 import { cn } from "@/lib/utils";
 import { format, isToday, isTomorrow, isPast } from "date-fns";
-import { Trash2 } from "lucide-react";
+import { Trash2, Flag, CalendarDays, Check, AlertTriangle } from "lucide-react";
 
 type Props = {
   tasks: Task[];
@@ -56,7 +56,7 @@ export function TaskList({ tasks, courses, onCycle, onEdit, onDelete }: Props) {
             <button
               onClick={() => onCycle(task.id)}
               className={cn(
-                "w-6 h-6 rounded flex items-center justify-center mr-4 shrink-0 border-2 transition-colors",
+                "w-6 h-6 rounded-full flex items-center justify-center mr-4 shrink-0 border-2 transition-colors",
                 isDone
                   ? "bg-stone-100 border-stone-200"
                   : inProgress
@@ -65,8 +65,8 @@ export function TaskList({ tasks, courses, onCycle, onEdit, onDelete }: Props) {
               )}
               aria-label="toggle status"
             >
-              {isDone && <span className="text-[10px] text-stone-500">✓</span>}
-              {inProgress && <div className="size-2 bg-primary" />}
+              {isDone && <Check className="size-3 text-stone-500" strokeWidth={3} />}
+              {inProgress && <div className="size-2 rounded-full bg-primary animate-pulse" />}
             </button>
 
             <button
@@ -84,10 +84,11 @@ export function TaskList({ tasks, courses, onCycle, onEdit, onDelete }: Props) {
                 )}
                 <span
                   className={cn(
-                    "text-[9px] font-mono uppercase tracking-tighter",
+                    "text-[9px] font-mono uppercase tracking-tighter inline-flex items-center gap-1",
                     isDone ? "text-stone-400" : priorityClasses[task.priority],
                   )}
                 >
+                  <Flag className="size-2.5" strokeWidth={2.5} fill="currentColor" />
                   {t(task.priority === "high" ? "high" : task.priority === "mid" ? "mid" : "low")}
                 </span>
                 <span className="text-[9px] font-mono uppercase tracking-tighter text-muted">
@@ -103,13 +104,17 @@ export function TaskList({ tasks, courses, onCycle, onEdit, onDelete }: Props) {
             <div className="text-right font-mono mr-4">
               {task.due ? (
                 <>
-                  <p className="text-[10px] text-muted uppercase">{t("deadline")}</p>
+                  <p className="text-[10px] text-muted uppercase flex items-center justify-end gap-1">
+                    <CalendarDays className="size-2.5" />
+                    {t("deadline")}
+                  </p>
                   <p
                     className={cn(
-                      "text-xs",
+                      "text-xs inline-flex items-center gap-1",
                       overdue ? "font-bold text-priority-high" : "text-foreground",
                     )}
                   >
+                    {overdue && <AlertTriangle className="size-3" />}
                     {formatDue(task.due, t)}
                   </p>
                 </>
