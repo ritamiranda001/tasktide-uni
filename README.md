@@ -38,9 +38,9 @@ Foi desenvolvida com recurso a ferramentas de IA (vibe coding), seguindo um flux
 
 | Nome | Função | GitHub |
 |------|--------|--------|
-| [Nome 1] | [Função] |
-| [Nome 2] | [Função] |
-| [Nome 3] | [Função] |
+| [David Malafaya] | [Doumentaçao e Relatório] | DavidMalafaya
+| [Joao Rodrigues] | [Deploy] | JoaoRodri04
+| [Rita Miranda] | [Criar Site] | ritamiranda001
 
 
 A aplicação fica disponível em `http://localhost:5173` (ou na porta indicada no terminal).
