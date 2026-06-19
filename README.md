@@ -51,8 +51,9 @@ A aplicação fica disponível em `http://localhost:5173` (ou na porta indicada 
 
 O projeto foi desenvolvido seguindo uma metodologia Agile/Scrum simplificada, organizada em 2 sprints:
 
-- **Sprint 1** — desenvolvimento do protótipo funcional, configuração do repositório, pipeline CI/CD e deploy inicial.
-- **Sprint 2** — ajustes, correções de bugs, melhorias e elaboração do relatório final.
+- **Sprint 1** — Criação de site.
+- **Sprint 2** — Fazer deploy do site no Vercel.
+- **Sprint 3** - Relatório
 
 A gestão de tarefas, backlog e issues foi feita através do **GitHub Projects**.
 
