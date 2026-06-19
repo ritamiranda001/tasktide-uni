@@ -66,7 +66,7 @@ export function CourseSidebar({ courses, selectedId, onSelect, onAdd, onDelete }
                 "group flex items-center justify-between py-1.5 px-2 rounded-sm cursor-pointer transition-colors",
                 selectedId === null
                   ? "bg-foreground text-background"
-                  : "hover:bg-black/5 text-muted",
+                  : "hover:bg-black/10 text-muted",
               )}
               onClick={() => onSelect(null)}
             >
@@ -80,7 +80,7 @@ export function CourseSidebar({ courses, selectedId, onSelect, onAdd, onDelete }
                   key={c.id}
                   className={cn(
                     "group flex items-center justify-between py-1.5 px-2 rounded-sm cursor-pointer transition-colors",
-                    active ? "bg-foreground text-background" : "hover:bg-black/5 text-muted",
+                    active ? "bg-foreground text-background" : "hover:bg-black/10 text-muted",
                   )}
                   onClick={() => onSelect(c.id)}
                 >
@@ -135,7 +135,7 @@ export function CourseSidebar({ courses, selectedId, onSelect, onAdd, onDelete }
       <div className="mt-auto pt-6 border-t border-border flex justify-between items-center">
         <button
           onClick={() => setLang(lang === "pt" ? "en" : "pt")}
-          className="text-[10px] font-mono uppercase tracking-widest flex items-center gap-2 px-2 py-1 ring-1 ring-border rounded hover:bg-black/5"
+          className="text-[10px] font-mono uppercase tracking-widest flex items-center gap-2 px-2 py-1 ring-1 ring-border rounded hover:bg-black/10"
         >
           <Languages className="size-3" />
           <span className={cn(lang === "pt" ? "text-foreground" : "text-muted")}>PT</span>
