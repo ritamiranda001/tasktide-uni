@@ -35,7 +35,7 @@ export function CourseSidebar({ courses, selectedId, onSelect, onAdd, onDelete }
   };
 
   return (
-    <aside className="w-72 border-r border-border flex flex-col p-6 sticky top-0 h-screen shrink-0">
+    <aside className="w-72 border-r border-border flex flex-col p-6 sticky top-0 h-screen shrink-0 bg-sidebar">
       <div className="mb-10">
         <div className="flex items-center gap-2 mb-1.5">
           <div className="size-7 rounded-sm bg-foreground text-background flex items-center justify-center">
