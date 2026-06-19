@@ -2,7 +2,7 @@
 
 Aplicação web para gestão colaborativa de tarefas, desenvolvida no âmbito da unidade curricular de Engenharia de Software (ECGM, IPVC-ESTG).
 
-**🔗 Aplicação online:** [Adicionar link do Vercel]
+**🔗 Aplicação online:** https://tasktide-uni.vercel.app/
 
 ---
 
